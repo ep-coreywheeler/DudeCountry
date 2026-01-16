@@ -1,217 +1,170 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2487.7">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dude Country</title>
+
+  <!-- Koulen font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet">
+
+  <style>
+    :root { --cta-blue: #4E87C6; }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+
+    body {
+      margin: 0;
+      background: #000;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .viewport {
+      width: 100vw;
+      height: 100vh;
+      display: grid;
+      place-items: center;
+    }
+
+    .stage {
+      position: relative;
+      width: 440px;
+      height: 956px;
+      transform-origin: center;
+    }
+
+    .bg {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+
+    .bg video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .bg::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.1);
+    }
+
+    .textBlock {
+      position: absolute;
+      top: 174px;
+      width: 100%;
+      text-align: center;
+      padding: 0 24px;
+    }
+
+    .welcomeImage {
+      display: block;
+      width: 100%;
+      max-width: 360px;
+      margin: 0 auto 16px;
+    }
+
+    .desc {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.35;
+      max-width: 360px;
+      margin-left: auto;
+      margin-right: auto;
+      text-shadow: 0 10px 28px rgba(0,0,0,0.35);
+    }
+
+    .cta {
+      position: absolute;
+      left: 43px;
+      top: 524px;
+      width: 349px;
+      height: 67px;
+      display: grid;
+      place-items: center;
+      background: var(--cta-blue);
+      color: #fff;
+      text-decoration: none;
+      font-family: "Koulen", sans-serif;
+      font-size: 22px;
+      letter-spacing: 0.06em;
+      border-radius: 18px;
+      box-shadow: 0 18px 50px rgba(0,0,0,0.25);
+      transition: background-color 0.2s ease;
+    }
+
+    .cta:hover { background-color: #2D282C; }
+
+    .cta:focus-visible {
+      outline: 3px solid rgba(255,255,255,0.85);
+      outline-offset: 4px;
+    }
+
+    .disclaimer {
+      position: absolute;
+      left: 43px;
+      top: 600px;
+      width: 349px;
+      font-size: 11px;
+      line-height: 1.35;
+      text-align: center;
+      opacity: 0.75;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      margin: 0;
+      text-shadow: 0 10px 28px rgba(0,0,0,0.25);
+    }
   </style>
 </head>
+
 <body>
-<p class="p1">&lt;!doctype html&gt;</p>
-<p class="p1">&lt;html lang="en"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;Dude Country&lt;/title&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Koulen font (CTA) --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;link href="https://fonts.googleapis.com/css2?family=Koulen&amp;display=swap" rel="stylesheet"&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>:root {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--cta-blue: #4E87C6;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--frame-w: 440;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--frame-h: 956;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>* { box-sizing: border-box; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>html, body { height: 100%; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>body {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin: 0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: #000;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: grid;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>place-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>overflow: hidden;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: #fff;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* Scale the exact Figma frame (440x956) to fit the viewport */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.viewport {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>width: 100vw;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>height: 100vh;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: grid;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>place-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.stage {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>position: relative;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>width: calc(var(--frame-w) * 1px);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>height: calc(var(--frame-h) * 1px);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>transform-origin: center;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* Background video */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.bg {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>position: absolute;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>inset: 0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>overflow: hidden;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.bg video {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>width: 100%;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>height: 100%;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>object-fit: cover;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* Subtle dark overlay (keeps text readable) */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.bg::after {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>content: "";</p>
-<p class="p1"><span class="Apple-converted-space">      </span>position: absolute;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>inset: 0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(0,0,0,0.10);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>pointer-events: none;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* Exact-positioned content */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.textBlock {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>position: absolute;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>left: 0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>top: 174px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>width: 440px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 0 24px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* Use your provided image for WELCOME TO DUDE COUNTRY */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.welcomeImage {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: block;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>width: 100%;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>max-width: 360px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin: 0 auto 16px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.desc {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin: 0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 16px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1.35;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>max-width: 360px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-left: auto;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-right: auto;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>text-shadow: 0 10px 28px rgba(0,0,0,0.35);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.cta {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>position: absolute;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>left: 43px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>top: 524px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>width: 349px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>height: 67px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: grid;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>place-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: var(--cta-blue);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: #fff;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>text-decoration: none;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-family: 'Koulen', sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 22px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: 0.06em;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 18px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 18px 50px rgba(0,0,0,0.25);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>transition: background-color 0.2s ease;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.cta:hover {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background-color: #2D282C;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.cta:focus-visible {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>outline: 3px solid rgba(255,255,255,0.85);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>outline-offset: 4px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.disclaimer {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>position: absolute;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>left: 43px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>top: 600px; /* CTA top + height + spacing */</p>
-<p class="p1"><span class="Apple-converted-space">      </span>width: 349px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 11px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1.35;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>opacity: 0.75;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin: 0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>text-shadow: 0 10px 28px rgba(0,0,0,0.25);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>@media (prefers-reduced-motion: reduce) {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.cta { transition: none; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="viewport"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="stage" id="stage"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="bg"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;video autoplay muted loop playsinline preload="metadata"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;source src="assets/DudeCountryBackground.mp4" type="video/mp4" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/video&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="textBlock"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;img</p>
-<p class="p1"><span class="Apple-converted-space">          </span>src="assets/DudeCountry_Logo.svg"</p>
-<p class="p1"><span class="Apple-converted-space">          </span>alt="Welcome to Dude Country"</p>
-<p class="p1"><span class="Apple-converted-space">          </span>class="welcomeImage"</p>
-<p class="p1"><span class="Apple-converted-space">        </span>/&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="desc"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>Our limited-edition &lt;strong&gt;DUDE NOT DISTURB&lt;/strong&gt; shoe has built-in NFC tech that helps you unplug the second you step in. After setup, all you gotta do is TAP YOUR DUDES!</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;a</p>
-<p class="p1"><span class="Apple-converted-space">        </span>class="cta"</p>
-<p class="p1"><span class="Apple-converted-space">        </span>href="https://www.icloud.com/shortcuts/7bd497a8908649bfb7fbc5b2486863ce"</p>
-<p class="p1"><span class="Apple-converted-space">        </span>target="_blank"</p>
-<p class="p1"><span class="Apple-converted-space">        </span>rel="noopener noreferrer"</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>CLICK HERE FOR STEP 2</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/a&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="disclaimer"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>DudeTime deserves an app for both Android and iOS, but for now this concept only works on iOS devices.</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>(function () {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const stage = document.getElementById('stage');</p>
-<p class="p1"><span class="Apple-converted-space">      </span>if (!stage) return;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>const W = 440;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const H = 956;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>function fit() {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>const vw = window.innerWidth;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>const vh = window.innerHeight;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>const scale = Math.min(vw / W, vh / H);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>stage.style.transform = `scale(${scale})`;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>window.addEventListener('resize', fit, { passive: true });</p>
-<p class="p1"><span class="Apple-converted-space">      </span>fit();</p>
-<p class="p1"><span class="Apple-converted-space">    </span>})();</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+  <div class="viewport">
+    <div class="stage" id="stage">
+      <div class="bg">
+        <video autoplay muted loop playsinline preload="metadata">
+          <source src="assets/DudeCountryBackground.mp4" type="video/mp4" />
+        </video>
+      </div>
+
+      <div class="textBlock">
+        <img src="assets/DudeCountry_Logo.svg" alt="Welcome to Dude Country" class="welcomeImage" />
+        <p class="desc">
+          Our limited-edition <strong>DUDE NOT DISTURB</strong> shoe has built-in NFC tech that helps you unplug the second you step in. After setup, all you gotta do is TAP YOUR DUDES!
+        </p>
+      </div>
+
+      <a class="cta" href="https://www.icloud.com/shortcuts/7bd497a8908649bfb7fbc5b2486863ce" target="_blank" rel="noopener noreferrer">
+        CLICK HERE FOR STEP 2
+      </a>
+
+      <p class="disclaimer">
+        DudeTime deserves an app for both Android and iOS, but for now this concept only works on iOS devices.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const stage = document.getElementById('stage');
+      if (!stage) return;
+
+      const W = 440, H = 956;
+
+      function fit() {
+        const scale = Math.min(window.innerWidth / W, window.innerHeight / H);
+        stage.style.transform = `scale(${scale})`;
+      }
+
+      window.addEventListener('resize', fit, { passive: true });
+      fit();
+    })();
+  </script>
 </body>
 </html>
