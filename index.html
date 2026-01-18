@@ -4,155 +4,144 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Welcome to Dude Country</title>
-  
-  <link rel="icon" type="image/png" sizes="32x32" href="/DudeCountry/favicon.png">
 
-  <!-- Koulen font (CTA) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet" />
 
   <style>
-    :root {
-      --cta-blue: #4E87C6;
-      --frame-w: 440;
-      --frame-h: 956;
+    :root{
+      --cta-blue:#4E87C6;
+      --frame-w:440;
+      --frame-h:956;
     }
 
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
 
-    body {
-      margin: 0;
-      background: #000;
-      display: grid;
-      place-items: center;
-      overflow: hidden;
-      color: #fff;
+    body{
+      margin:0;
+      background:#000;
+      overflow:hidden;
+      color:#fff;
     }
 
-    /* Scale the exact Figma frame (440x956) to fit the viewport */
-    .viewport {
-      width: 100vw;
-      height: 100vh;
-      position: relative;
-      overflow: hidden;
+    .viewport{
+      position:relative;
+      width:100vw;
+      height:100vh;
+      overflow:hidden;
     }
 
-    .stage {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      width: 440px;
-      height: 956px;
-      transform: translate(-50%, -50%);
-      transform-origin: center;
-      z-index: 2; /* above background */
-      pointer-events: none;
+    .bg{
+      position:absolute;
+      inset:0;
+      z-index:0;
+      overflow:hidden;
     }
 
-    /* Re-enable interaction for clickable elements inside the staged frame */
-    .stage a { pointer-events: auto; }
-
-    /* Background video (FULL VIEWPORT, independent from the 440x956 Figma frame) */
-    .bg {
-      position: absolute;
-      inset: 0;
-      overflow: hidden;
-      z-index: 0;
+    .bg video{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
     }
 
-    .bg video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
+    .bg::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.00) 0%,
+        rgba(0,0,0,0.10) 20%
+      );
+      pointer-events:none;
     }
 
-    .bg::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.10);
-      pointer-events: none;
+    .stage{
+      position:absolute;
+      left:50%;
+      top:50%;
+      width:calc(var(--frame-w) * 1px);
+      height:calc(var(--frame-h) * 1px);
+      transform:translate(-50%,-50%);
+      transform-origin:center;
+      z-index:2;
+      pointer-events:none;
     }
 
-    /* Exact-positioned content */
-    .textBlock {
-      position: absolute;
-      left: 0;
-      top: 174px; /* Figma */
-      width: 440px; /* Figma frame width */
-      text-align: center;
-      padding: 0 20px; /* Figma */
-      z-index: 2;
+    .stage a{ pointer-events:auto; }
+
+    .textBlock{
+      position:absolute;
+      left:0;
+      top:174px;
+      width:440px;
+      padding:0 20px;
+      text-align:center;
     }
 
-    /* Use your provided image for WELCOME TO DUDE COUNTRY */
-    .welcomeImage {
-      display: block;
-      width: 100%;
-      max-width: 360px;
-      margin: 0 auto 20px;
+    .welcomeImage{
+      display:block;
+      width:100%;
+      max-width:360px;
+      margin:0 auto 12px;
     }
 
-    .desc {
-      margin: 0 auto 10px;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      font-size: 18px;
-      line-height: 1.35;
-      max-width: 360px;
-      margin-left: auto;
-      margin-right: auto;
-      text-shadow: 0 20px 28px rgba(0,0,0,0.8);
+    .desc{
+      margin:0 auto;
+      max-width:360px;
+      font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      font-size:18px;
+      line-height:1.35;
+      text-shadow:0 20px 28px rgba(0,0,0,0.80);
     }
 
-    .cta {
-      position: absolute;
-      left: 43px; /* Figma */
-      top: 550px; /* Figma */
-      width: 349px; /* Figma */
-      height: 67px; /* Figma */
-      display: grid;
-      place-items: center;
-      background: var(--cta-blue);
-      color: #fff;
-      text-decoration: none;
-      font-family: "Koulen", sans-serif;
-      font-size: 24px;
-      letter-spacing: 0.1em;
-      border-radius: 18px;
-      box-shadow: 0 18px 50px rgba(0,0,0,0.25);
-      transition: background-color 0.2s ease;
-      z-index: 2;
+    .cta{
+      position:absolute;
+      left:43px;
+      top:500px;
+      width:349px;
+      height:67px;
+      display:grid;
+      place-items:center;
+      background:var(--cta-blue);
+      color:#fff;
+      text-decoration:none;
+      font-family:"Koulen", sans-serif;
+      font-size:24px;
+      letter-spacing:0.10em;
+      border-radius:18px;
+      box-shadow:0 18px 50px rgba(0,0,0,0.25);
+      transition:background-color 0.2s ease;
     }
 
-    .cta:hover {
-      background-color: #2D282C;
+    .cta:hover{ background-color:#2D282C; }
+
+    .cta:focus-visible{
+      outline:3px solid rgba(255,255,255,0.85);
+      outline-offset:4px;
     }
 
-    .cta:focus-visible {
-      outline: 3px solid rgba(255,255,255,0.85);
-      outline-offset: 4px;
+    .disclaimer{
+      position:absolute;
+      left:43px;
+      top:575px;
+      width:349px;
+      margin:0;
+      font-size:11px;
+      line-height:1.35;
+      text-align:center;
+      opacity:0.75;
+      font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      text-shadow:0 10px 28px rgba(0,0,0,0.25);
     }
 
-    .disclaimer {
-      position: absolute;
-      left: 43px; /* Figma */
-      top: 580px; /* Figma */
-      width: 349px; /* matches CTA */
-      font-size: 11px;
-      line-height: 1.35;
-      text-align: center;
-      opacity: 0.75;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      margin: 0 auto 15px;
-      text-shadow: 0 10px 28px rgba(0,0,0,0.25);
-      z-index: 2;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .cta { transition: none; }
+    @media (prefers-reduced-motion: reduce){
+      .cta{ transition:none; }
     }
   </style>
 </head>
@@ -167,22 +156,13 @@
 
     <div class="stage" id="stage">
       <div class="textBlock">
-        <img
-          src="assets/DudeCountry_Logo.svg"
-          alt="Welcome to Dude Country"
-          class="welcomeImage"
-        />
+        <img src="assets/DudeCountry_Logo.svg" alt="Welcome to Dude Country" class="welcomeImage" />
         <p class="desc">
           Our limited-edition <strong>DUDE NOT DISTURB</strong> shoe has built-in NFC tech that helps you unplug the second you step in. After setup, all you gotta do is TAP YOUR DUDES!
         </p>
       </div>
 
-      <a
-        class="cta"
-        href="https://www.icloud.com/shortcuts/7bd497a8908649bfb7fbc5b2486863ce"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <a class="cta" href="https://www.icloud.com/shortcuts/7bd497a8908649bfb7fbc5b2486863ce" target="_blank" rel="noopener noreferrer">
         CLICK HERE FOR STEP 2
       </a>
 
@@ -194,7 +174,7 @@
 
   <script>
     (function () {
-      const stage = document.getElementById('stage');
+      const stage = document.getElementById("stage");
       if (!stage) return;
 
       const W = 440;
@@ -207,7 +187,7 @@
         stage.style.transform = `translate(-50%, -50%) scale(${scale})`;
       }
 
-      window.addEventListener('resize', fit, { passive: true });
+      window.addEventListener("resize", fit, { passive: true });
       fit();
     })();
   </script>
